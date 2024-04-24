@@ -1,0 +1,170 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AlkilaApp.LoginVista"
+             BackgroundColor="{DynamicResource SecondaryColor}"
+             NavigationPage.HasNavigationBar="False">
+
+  <ContentPage.Content>
+        <Grid
+            BackgroundColor="#1C375C"
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="FillAndExpand">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <StackLayout Grid.Row="0" HorizontalOptions="Center">
+                <Image
+                    Margin="0,30"
+                    Aspect="AspectFit"
+                    HeightRequest="100"
+                    Source="dotnet_bot.svg"
+                    WidthRequest="100" />
+            </StackLayout>
+
+            <Frame
+                Grid.Row="1"
+                Margin="20,0,20,-90"
+                BorderColor="#1C375C"
+                CornerRadius="50"
+                HasShadow="True"
+                HeightRequest="700">
+                <Grid
+                    Padding="20,50,20,0"
+                    HorizontalOptions="FillAndExpand"
+                    RowSpacing="20"
+                    VerticalOptions="FillAndExpand">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Label
+                        Grid.Row="0"
+                        FontAttributes="Bold"
+                        FontSize="24"
+                        HorizontalOptions="CenterAndExpand"
+                        Text="Bienvenido de nuevo !"
+                        TextColor="#1C375C" />
+                    <Label
+                        Grid.Row="1"
+                        Margin="0,-10,0,0"
+                        HorizontalOptions="CenterAndExpand"
+                        Text="Hecha un vistazo a los emprendedor@s"
+                        TextColor="#1C375C" />
+
+                    <Entry
+                        Grid.Row="2"
+                        Margin="0,20,0,0"
+                        HorizontalOptions="FillAndExpand"
+                        Placeholder="Correo Electrónico"
+                        Text="{Binding CorreoElectronico}"
+                        VerticalOptions="FillAndExpand" />
+                    <Entry
+                        Grid.Row="3"
+                        HorizontalOptions="FillAndExpand"
+                        IsPassword="True"
+                        Placeholder="Contraseña"
+                        Text="{Binding Contrasenya}"
+                        VerticalOptions="FillAndExpand" />
+                    
+                    <Button
+                        Grid.Row="4"
+                        BackgroundColor="#1C375C"
+                        Command="{Binding LoginBtn}"
+                        CornerRadius="20"
+                        Text="Entrar" >
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroupList>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Normal" />
+                                    <VisualState x:Name="Pressed">
+                                        <VisualState.Setters>
+                                            <!-- Define los cambios en el botón cuando está presionado -->
+                                           
+                                            <Setter Property="Scale" Value="0.9" />
+                                            <!-- Por ejemplo, puedes cambiar el color de fondo -->
+                                        </VisualState.Setters>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateGroupList>
+                        </VisualStateManager.VisualStateGroups>
+                    </Button>
+                    
+
+                    <Button
+                        Grid.Row="5"
+                        BackgroundColor="#1C375C"
+                        Command="{Binding RegisterBtn}"
+                        CornerRadius="20"
+                        Text="Registrarse">
+
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroupList>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Normal" />
+                                    <VisualState x:Name="Pressed">
+                                        <VisualState.Setters>
+                                            <!-- Define los cambios en el botón cuando está presionado -->
+                                          
+                                            <Setter Property="Scale" Value="0.9" />
+                                            <!-- Por ejemplo, puedes cambiar el color de fondo -->
+                                        </VisualState.Setters>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateGroupList>
+                        </VisualStateManager.VisualStateGroups>
+                    </Button>
+
+
+            
+                    
+                    <Label
+                        Grid.Row="7"
+                        FontAttributes="Bold"
+                        HorizontalOptions="CenterAndExpand"
+                        Text="Forget Password" />
+
+                    <Button
+                           Grid.Row="8"
+                           BackgroundColor="Transparent"
+                           Command="{Binding BtnEsEmpresa}"
+                           CornerRadius="20"
+                           Text="Eres empresario , pulse aquí 🎩" >
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroupList>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Normal" >
+
+                                        <VisualState.Setters>
+                                            <!-- Define los cambios en el botón cuando está presionado -->
+                                            <Setter Property="TextColor" Value="#1C375C"/>
+                                            <!-- Por ejemplo, puedes cambiar el color de fondo -->
+                                        </VisualState.Setters>
+                                    </VisualState>
+
+                                    <VisualState x:Name="Pressed">
+                                        <VisualState.Setters>
+                                            <!-- Define los cambios en el botón cuando está presionado -->
+                                            <Setter Property="TextColor" Value="Purple"/>
+                                            <Setter Property="Scale" Value="0.9" />
+                                            <!-- Por ejemplo, puedes cambiar el color de fondo -->
+                                        </VisualState.Setters>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateGroupList>
+                        </VisualStateManager.VisualStateGroups>
+                    </Button>
+                </Grid>
+            </Frame>
+        </Grid>
+    </ContentPage.Content>
+
+</ContentPage>
